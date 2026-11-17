@@ -17,7 +17,9 @@ HEAD = """<!doctype html>
 <meta property="og:title" content="{title}" />
 <meta property="og:description" content="{desc}" />
 <meta property="og:url" content="https://santiago23florido.github.io{canon}" />
+<meta property="og:image" content="https://santiago23florido.github.io/santiago.jpg" />
 <meta name="twitter:card" content="summary" />
+<meta name="twitter:image" content="https://santiago23florido.github.io/santiago.jpg" />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#129470;</text></svg>" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -31,7 +33,7 @@ HEAD = """<!doctype html>
 
 <nav>
   <div class="wrap">
-    <a class="brand" href="/">Santiago Florido Gómez</a>
+    <a class="brand" href="/"><img src="/santiago.jpg" alt="" width="26" height="26" />Santiago Florido Gómez</a>
     <a class="navlink{a_research}" href="/research/">Research</a>
     <a class="navlink{a_projects}" href="/projects/">Projects</a>
     <a class="navlink{a_experience}" href="/experience/">Experience</a>
@@ -105,22 +107,26 @@ def page(path, canon, title, desc, body, active=""):
 # ===================================================================
 INDEX = """
 <header class="hero">
-  <div class="wrap">
-    <h1>Santiago Florido Gómez</h1>
-    <p class="role">
-      MSc student, Cyber-Physical Systems — Institut Polytechnique de Paris<br />
-      Engineering degree, AI track — ENSTA Paris
-    </p>
-    <p class="lede">
-      I work on getting learned behaviour to <strong>survive a change of body</strong>: moving a
-      skill from one humanoid to a very different one, and translating human motor intention
-      into commands a robotic hand can act on.
-    </p>
-    <div class="links">
-      <a href="https://github.com/Santiago23florido">GitHub</a>
-      <a href="https://www.linkedin.com/in/santiago-florido-gómez-722193232/">LinkedIn</a>
-      <a href="mailto:santiago.florido@ensta-paris.fr">Email</a>
+  <div class="wrap herorow">
+    <div class="herotext">
+      <h1>Santiago Florido Gómez</h1>
+      <p class="role">
+        MSc student, Cyber-Physical Systems — Institut Polytechnique de Paris<br />
+        Engineering degree, AI track — ENSTA Paris
+      </p>
+      <p class="lede">
+        I work on getting learned behaviour to <strong>survive a change of body</strong>: moving a
+        skill from one humanoid to a very different one, and translating human motor intention
+        into commands a robotic hand can act on.
+      </p>
+      <div class="links">
+        <a href="https://github.com/Santiago23florido">GitHub</a>
+        <a href="https://www.linkedin.com/in/santiago-florido-gómez-722193232/">LinkedIn</a>
+        <a href="mailto:santiago.florido@ensta-paris.fr">Email</a>
+      </div>
     </div>
+    <img class="portrait" src="/santiago.jpg" width="190" height="190"
+         alt="Santiago Florido Gómez" />
   </div>
 </header>
 
