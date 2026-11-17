@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en" data-theme="">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Projects — Santiago Florido Gómez</title>
+<meta name="description" content="Cross-embodiment humanoid skill transfer, motor-unit decoding for a musculoskeletal hand, safe catheter navigation, and certified network growth." />
+<meta name="author" content="Santiago Florido Gómez" />
+<link rel="canonical" href="https://santiago23florido.github.io/projects/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Projects — Santiago Florido Gómez" />
+<meta property="og:description" content="Cross-embodiment humanoid skill transfer, motor-unit decoding for a musculoskeletal hand, safe catheter navigation, and certified network growth." />
+<meta property="og:url" content="https://santiago23florido.github.io/projects/" />
+<meta name="twitter:card" content="summary" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#129470;</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/style.css" />
+<script>
+  try { var t = localStorage.getItem("theme"); if (t) document.documentElement.setAttribute("data-theme", t); } catch (e) {}
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="/">Santiago Florido Gómez</a>
+    <a class="navlink" href="/research/">Research</a>
+    <a class="navlink active" href="/projects/">Projects</a>
+    <a class="navlink" href="/experience/">Experience</a>
+    <a class="navlink" href="#contact">Contact</a>
+    <button id="theme" type="button" aria-label="Switch between light and dark theme" title="Light / dark">&#9680;</button>
+  </div>
+</nav>
+
+<header class="pagehead">
+  <div class="wrap">
+    <a class="back" href="/">&larr; Santiago Florido Gómez</a>
+    <h1>Projects</h1>
+    <p>Each one states the result it actually produced and the limits of the evidence behind
+    it — what is simulation, what data is synthetic, and what has not been built yet.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+
+    <article class="project">
+      <h3><a href="https://github.com/Santiago23florido/lHumanoid-Soccer-Isaac-Lab">Cross-Embodiment Humanoid Skill Transfer</a></h3>
+      <p class="sub">Isaac Lab · 2026–present</p>
+      <p>
+        A locomotion skill learned on a <b>Unitree G1</b> runs <b>zero-shot</b> on a <b>NAO</b> that
+        never trained on it — nine times lighter and 2.3 times shorter. The skill crosses as a
+        <i>contract</i> rather than as joint angles: the short future of a 27-number state describing
+        what the body does, made dimensionless with its own leg length, mass and gravity.
+      </p>
+      <p>
+        Each skill's generator is trained once by flow matching on the source robot's rollouts;
+        each body's estimator and tracker are trained once on procedurally generated plans and never
+        see a transferred skill. So <b>N skills on M bodies cost N + M trainings instead of N × M</b>.
+      </p>
+      <div class="result">
+        <p><b>192 of 192 episodes complete without a fall</b> per body and skill, at 1.00–1.14× the
+        teacher's speed. On the NAO the zero-shot tracker stays closer to the teacher's gait
+        (0.141–0.185 deviation) than a tracker trained on the skill itself (0.346–0.674) or
+        joint-angle imitation (0.195–0.307). A task held out of every generator and tracker
+        still runs: 288/288 on the NAO with cross-fitted plans.</p>
+        <p class="caveat">All results are in simulation — no physical robot has walked with this.
+        One source body and one target body, not arbitrary morphologies.</p>
+      </div>
+      <div class="tags">
+        <span>Isaac Lab</span><span>Isaac Sim</span><span>PyTorch</span>
+        <span>PPO (rsl_rl)</span><span>Flow Matching</span><span>Dimensional Analysis</span>
+      </div>
+    </article>
+
+    <article class="project">
+      <h3><a href="https://github.com/Santiago23florido/Musculoskeletal-Hand-Simulation">Musculoskeletal Hand Control from Motor Units</a></h3>
+      <p class="sub">MuJoCo / MyoSuite · 2026–present</p>
+      <p>
+        Decoding <b>individual motor units</b> from high-density surface EMG in order to drive a
+        simulated musculoskeletal hand (MyoSuite's MyoHand). The open problem: decomposition methods
+        lose track of motor units exactly when the limb moves quickly — which is precisely when an
+        interface has to remain usable.
+      </p>
+      <p>
+        Building on the published adaptive method of Mendez Guerra, Barsakcioglu and Farina (2024),
+        I added a <b>closed-loop context head</b> that decides which detected peaks are true
+        discharges and feeds those decisions back into the adaptation.
+      </p>
+      <div class="result">
+        <p>On a <b>held-out subject, evaluated once with every component frozen</b>: it recovers
+        <b>87.4%</b> of discharges where the original method recovers <b>76.9%</b>
+        (+10.5, 95% cluster-bootstrap [7.6, 14.0]), and <b>78.6% against 60.5%</b> during the
+        fastest ramps. Units tracked at ≥90% agreement rise from 48.6% to 68.1%, with precision
+        and recall improving together.</p>
+        <p class="caveat">Ongoing research. The recordings are simulated HD-sEMG, which is why the
+        true discharges are known and every decoded spike can be scored. The hand is not yet driven
+        by the decoded motor units — that is the next stage of the project.</p>
+      </div>
+      <div class="tags">
+        <span>MuJoCo</span><span>MyoSuite</span><span>PyTorch</span>
+        <span>HD-sEMG</span><span>Attention</span><span>Signal Processing</span>
+      </div>
+    </article>
+
+    <article class="project">
+      <h3><a href="https://github.com/Santiago23florido/safe-autonomous-catheter-navigation">Safe Autonomous Catheter Navigation</a></h3>
+      <p class="sub">Isaac Lab · 2026–present</p>
+      <p>
+        A physics-based endovascular navigation research environment: an <b>81-body, 80-DOF flexible
+        catheter</b> advanced through vascular geometry with contact-force sensing. Wall-contact force
+        is treated as a <b>constraint rather than another weighted term in the reward</b>, so the budget
+        is stated in units a clinician can argue with instead of being hidden inside a tuned penalty
+        weight. The cost is emitted on a channel structurally separate from the reward.
+      </p>
+      <div class="result">
+        <p class="caveat">Phase 1 — environment construction. There is no reinforcement learning yet:
+        <code>_get_rewards()</code> returns zeros by construction, and a test enforces that separation.</p>
+      </div>
+      <div class="tags">
+        <span>Isaac Lab</span><span>Isaac Sim</span><span>Python</span>
+        <span>PyTorch</span><span>Safe RL / CMDPs</span>
+      </div>
+    </article>
+
+    <article class="project">
+      <h3><a href="https://github.com/Santiago23florido/functional-gradient-growth">CAGE-NAS — Certified Functional Descent</a></h3>
+      <p class="sub">Inria Saclay, équipe TAU · 2026</p>
+      <p>
+        Uses functional-gradient approximations in the <b>tangent space of the network</b> to certify
+        when to keep training parametrically and when to perform a function-preserving expansion,
+        so capacity grows only once the current representation can no longer certify a functional
+        descent step.
+      </p>
+      <div class="result">
+        <p>Grown architectures land <b>above the 99.8th percentile of 76,646 exhaustively enumerated
+        alternatives</b>, with 0.9575 ± 0.0038 test accuracy over four seeds on the principal
+        synthetic benchmark.</p>
+      </div>
+      <div class="tags">
+        <span>PyTorch</span><span>Neural Architecture Growth</span>
+        <span>Functional Gradients</span><span>Optimization</span>
+      </div>
+    </article>
+
+    <details class="more">
+      <summary>Earlier projects</summary>
+      <ul>
+        <li><b><a href="https://github.com/Santiago23florido/Deep-Drive-APEX">Deep-Drive-APEX</a></b> —
+          Autonomous navigation on a real robotic vehicle with ROS 2: LiDAR obstacle detection,
+          path planning and trajectory execution, with a Gazebo real-to-sim framework for validation.</li>
+        <li><b><a href="https://github.com/Santiago23florido/gromo">gromo</a></b> —
+          Contributions to the growing-networks module for PyTorch (Inria, équipe TAU).</li>
+        <li><b><a href="https://github.com/Santiago23florido/Neonatal-incubator-with-response-to-apnea-episodes">Neonatal incubator with apnea response</a></b> —
+          End-to-end central-apnea detection from EMG-derived respiratory signals using CNN–LSTM
+          temporal models, with closed-loop corrective stimulation.</li>
+        <li><b><a href="https://github.com/Santiago23florido/Neonatal-Incubator-Dynamic-Model-and-Control">Neonatal incubator: model &amp; control</a></b> —
+          Thermodynamic modelling, system identification and digital PID / incremental RST control.
+          Published at IEEE CCAC 2025.</li>
+        <li><b><a href="https://github.com/Santiago23florido/Incremental-RST-control-for-DC-motor-with-encoder-design">Incremental RST control of a DC motor</a></b> —
+          System identification and digital control on real hardware, with encoder design.</li>
+        <li><b><a href="https://github.com/Santiago23florido/Robust-Image-Matching-with-Local-Features">Robust image matching</a></b> and
+          <b><a href="https://github.com/Santiago23florido/Vision_LocalFeatures_BayesianClassification_KMeans">local features, Bayesian classification &amp; K-means</a></b> —
+          Classical computer-vision pipelines.</li>
+        <li><b><a href="https://github.com/Santiago23florido/Scara-web-controlled-robotic-arm">SCARA web-controlled robotic arm</a></b> —
+          Kinematics, embedded control and a web interface for a physical SCARA arm.</li>
+      </ul>
+    </details>
+
+    <p class="backtop"><a href="/research/">&larr; Why I work on this</a></p>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap contact">
+    <h2>Contact</h2>
+    <p>
+      I am looking for a <b>PhD in robot learning, neuromotor interfaces or dexterous
+      manipulation</b>, and I am always glad to talk about any of this work — including
+      reproducing or extending it.
+    </p>
+    <div class="links" style="margin-top:18px">
+      <a href="mailto:santiago.florido@ensta-paris.fr">santiago.florido@ensta-paris.fr</a>
+      <a href="https://github.com/Santiago23florido">github.com/Santiago23florido</a>
+      <a href="https://www.linkedin.com/in/santiago-florido-gómez-722193232/">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <footer>
+    <span>Santiago Florido Gómez — Palaiseau, France</span>
+    <span>Built with plain HTML and CSS. <a href="https://github.com/Santiago23florido/Santiago23florido.github.io">Source</a></span>
+  </footer>
+</div>
+
+<script>
+  (function () {
+    var btn = document.getElementById("theme");
+    if (!btn) return;
+    function current() {
+      var set = document.documentElement.getAttribute("data-theme");
+      if (set === "dark" || set === "light") return set;
+      return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+    btn.addEventListener("click", function () {
+      var next = current() === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", next);
+      try { localStorage.setItem("theme", next); } catch (e) {}
+    });
+  })();
+</script>
+
+</body>
+</html>

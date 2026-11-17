@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en" data-theme="">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Research — Santiago Florido Gómez</title>
+<meta name="description" content="Cross-embodiment transfer, neuromotor interfaces, dexterous manipulation, and safe and efficient learning. Publications." />
+<meta name="author" content="Santiago Florido Gómez" />
+<link rel="canonical" href="https://santiago23florido.github.io/research/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Research — Santiago Florido Gómez" />
+<meta property="og:description" content="Cross-embodiment transfer, neuromotor interfaces, dexterous manipulation, and safe and efficient learning. Publications." />
+<meta property="og:url" content="https://santiago23florido.github.io/research/" />
+<meta name="twitter:card" content="summary" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#129470;</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/style.css" />
+<script>
+  try { var t = localStorage.getItem("theme"); if (t) document.documentElement.setAttribute("data-theme", t); } catch (e) {}
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="/">Santiago Florido Gómez</a>
+    <a class="navlink active" href="/research/">Research</a>
+    <a class="navlink" href="/projects/">Projects</a>
+    <a class="navlink" href="/experience/">Experience</a>
+    <a class="navlink" href="#contact">Contact</a>
+    <button id="theme" type="button" aria-label="Switch between light and dark theme" title="Light / dark">&#9680;</button>
+  </div>
+</nav>
+
+<header class="pagehead">
+  <div class="wrap">
+    <a class="back" href="/">&larr; Santiago Florido Gómez</a>
+    <h1>Research</h1>
+    <p>What I work on, and the papers that have come out of it.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>Interests</h2>
+    <div class="interests">
+      <div class="interest">
+        <h3>Cross-embodiment transfer</h3>
+        <p>Moving a learned locomotion skill between humanoids of very different scale, in
+        simulation. The interesting part is not the policy but the interface: what a skill has
+        to be expressed in so that a body it was never trained on can execute it.</p>
+      </div>
+      <div class="interest">
+        <h3>Neuromotor interfaces</h3>
+        <p>Decoding individual motor units from high-density surface EMG while the limb is
+        moving — which is exactly when existing methods lose track of them, and exactly when an
+        interface has to stay usable.</p>
+      </div>
+      <div class="interest">
+        <h3>Dexterous manipulation</h3>
+        <p>Musculoskeletal and robotic hands, teleoperation, and the context a muscle signal
+        cannot carry on its own: two different intentions can produce almost the same
+        activation, and what separates them lies in the situation.</p>
+      </div>
+      <div class="interest">
+        <h3>Safe and efficient learning</h3>
+        <p>Constrained MDPs where a safety budget is stated in units someone can argue with,
+        physics-structured dynamics models, and networks that add capacity only once they can
+        certify they need it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="publications">
+  <div class="wrap">
+    <h2>Publications</h2>
+
+    <div class="pub">
+      <div class="year">2026</div>
+      <div>
+        <h3>CAGE-NAS: Certified Functional Descent for Efficient Model Growth</h3>
+        <p class="authors"><em>Santiago Florido Gómez</em>, Stéphane Rivaud</p>
+        <p class="venue"><b>AXIOM workshop at NeurIPS 2026</b> — accepted</p>
+        <p style="font-size:14.5px;color:var(--text-soft);margin:0 0 8px">
+          Uses functional-gradient approximations in the tangent space of the network to certify
+          when a model should grow rather than keep training parametrically.
+        </p>
+        <p class="meta"><a href="https://github.com/Santiago23florido/functional-gradient-growth">Code</a></p>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="year">2025</div>
+      <div>
+        <h3>Low-order dynamic modeling and control of a neonatal incubator</h3>
+        <p class="authors"><em>Santiago Florido Gómez</em>, José David Gómez Bedoya, Tatiana Manrique, Róbinson A. Torres</p>
+        <p class="venue"><b>2025 IEEE 7th Colombian Conference on Automatic Control (CCAC)</b></p>
+        <p style="font-size:14.5px;color:var(--text-soft);margin:0 0 8px">
+          A thermodynamic model of a commercial incubator reduced to a control-friendly low-order
+          form by system identification, with discrete-time PID and incremental RST controllers
+          that outperform the stock controller.
+        </p>
+        <p class="meta">
+          <a href="https://ieeexplore.ieee.org/document/11259151">IEEE Xplore</a>
+          <a href="https://github.com/Santiago23florido/Neonatal-Incubator-Dynamic-Model-and-Control">Code</a>
+        </p>
+      </div>
+    </div>
+
+    <p class="backtop"><a href="/projects/">The projects behind this work &rarr;</a></p>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap contact">
+    <h2>Contact</h2>
+    <p>
+      I am looking for a <b>PhD in robot learning, neuromotor interfaces or dexterous
+      manipulation</b>, and I am always glad to talk about any of this work — including
+      reproducing or extending it.
+    </p>
+    <div class="links" style="margin-top:18px">
+      <a href="mailto:santiago.florido@ensta-paris.fr">santiago.florido@ensta-paris.fr</a>
+      <a href="https://github.com/Santiago23florido">github.com/Santiago23florido</a>
+      <a href="https://www.linkedin.com/in/santiago-florido-gómez-722193232/">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <footer>
+    <span>Santiago Florido Gómez — Palaiseau, France</span>
+    <span>Built with plain HTML and CSS. <a href="https://github.com/Santiago23florido/Santiago23florido.github.io">Source</a></span>
+  </footer>
+</div>
+
+<script>
+  (function () {
+    var btn = document.getElementById("theme");
+    if (!btn) return;
+    function current() {
+      var set = document.documentElement.getAttribute("data-theme");
+      if (set === "dark" || set === "light") return set;
+      return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+    btn.addEventListener("click", function () {
+      var next = current() === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", next);
+      try { localStorage.setItem("theme", next); } catch (e) {}
+    });
+  })();
+</script>
+
+</body>
+</html>

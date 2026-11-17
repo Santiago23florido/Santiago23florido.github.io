@@ -219,3 +219,40 @@ footer {
   .pub { grid-template-columns: 1fr; gap: 4px; }
   .project { padding: 18px 18px; }
 }
+
+/* ===========================================================
+   Portada tipo indice: tarjetas que llevan a las sub-paginas
+   =========================================================== */
+
+.about p { font-size: 16.5px; max-width: 66ch; }
+.about p + p { margin-top: 14px; }
+
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+.card {
+  display: flex; flex-direction: column;
+  border: 1px solid var(--border); border-radius: 12px;
+  padding: 22px 22px 18px; background: var(--bg-card);
+  color: inherit; text-decoration: none;
+  transition: border-color .15s ease, transform .15s ease;
+}
+.card:hover {
+  border-color: var(--accent); text-decoration: none; transform: translateY(-2px);
+}
+.card h3 { margin: 0 0 8px; font-size: 18px; font-weight: 660; }
+.card p { margin: 0 0 18px; font-size: 14.5px; color: var(--text-soft); line-height: 1.55; flex: 1; }
+.card .enter { font-size: 14px; color: var(--accent); font-weight: 560; }
+
+/* cabecera de sub-pagina */
+.pagehead { padding: 48px 0 28px; border-bottom: 1px solid var(--border); }
+.pagehead .back { font-size: 14px; color: var(--text-soft); }
+.pagehead h1 { font-size: clamp(26px, 5vw, 36px); margin: 10px 0 8px; letter-spacing: -0.02em; }
+.pagehead p { margin: 0; color: var(--text-soft); font-size: 16.5px; max-width: 62ch; }
+
+.backtop { padding: 40px 0 0; font-size: 14px; }
+
+/* el nombre de la barra ahora es enlace a la portada */
+nav a.brand { color: var(--text); }
+nav a.brand:hover { color: var(--accent); text-decoration: none; }
+
+/* seccion actual marcada en la barra */
+nav a.navlink.active { color: var(--text); background: var(--bg-soft); }

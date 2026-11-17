@@ -2,22 +2,32 @@
 
 Personal research site — **https://santiago23florido.github.io**
 
-Static page, no build step and no dependencies: `index.html` plus `style.css`.
-GitHub Pages serves the `main` branch from the repository root, and `.nojekyll`
-tells it not to run Jekyll over the files.
+Static pages, no build step and no dependencies.
 
-## Editing
+```
+index.html              hero, about, the three section cards, contact
+research/index.html     interests and publications
+projects/index.html     the projects, their results and the limits of each
+experience/index.html   positions, education, skills, languages
+style.css               shared design tokens and layout
+```
 
-| File | Holds |
-|---|---|
-| `index.html` | All the content: research, publications, projects, experience, skills, contact. |
-| `style.css` | Design tokens at the top (`:root`), light and dark themes, layout. |
+The navigation bar, the contact block and the footer are repeated verbatim in all four
+pages. They are not edited by hand four times: `build.py` holds the shared head, navigation
+and footer plus the body of each page, and writes the four files.
 
-Colours are defined once as custom properties on `:root` and overridden for dark
-mode, so changing the palette means editing those two blocks and nothing else.
-The theme follows the operating system by default; the button in the navigation
-bar overrides it and stores the choice in `localStorage`.
+    python3 build.py
 
-Every result quoted on the page is accompanied by the limits of the evidence
-behind it — whether the work is in simulation, whether the data is synthetic,
-and what has not been built yet. Keep it that way when updating.
+Colours are defined once as custom properties on `:root` in `style.css` and overridden for
+dark mode, so changing the palette means editing those two blocks and nothing else. The
+theme follows the operating system by default; the button in the navigation bar overrides
+it and stores the choice in `localStorage`.
+
+`.nojekyll` stops GitHub Pages from running Jekyll over the files. Pages serves `main`
+from the repository root.
+
+## One rule when updating
+
+Every result quoted on the site is followed by the limits of the evidence behind it —
+whether the work is in simulation, whether the data is synthetic, and what has not been
+built yet. Keep it that way.
