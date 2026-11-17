@@ -229,7 +229,7 @@ RESEARCH = """
       <div>
         <h3>CAGE-NAS: Certified Functional Descent for Efficient Model Growth</h3>
         <p class="authors"><em>Santiago Florido Gómez</em>, Stéphane Rivaud</p>
-        <p class="venue"><b>AXIOM workshop at NeurIPS 2026</b> — accepted</p>
+        <p class="venue"><b><a href="https://arxiv.org/abs/2610.01173">AXIOM workshop at NeurIPS 2026</a></b> — accepted</p>
         <p style="font-size:14.5px;color:var(--text-soft);margin:0 0 8px">
           Uses functional-gradient approximations in the tangent space of the network to certify
           when a model should grow rather than keep training parametrically.
@@ -358,7 +358,7 @@ PROJECTS = """
 
     <article class="project">
       <h3><a href="https://github.com/Santiago23florido/functional-gradient-growth">CAGE-NAS — Certified Functional Descent</a></h3>
-      <p class="sub">Inria Saclay, équipe TAU · 2026</p>
+      <p class="sub">Inria Saclay, équipe TAU · 2026 · <a href="https://arxiv.org/abs/2610.01173">AXIOM workshop at NeurIPS 2026</a></p>
       <p>
         Uses functional-gradient approximations in the <b>tangent space of the network</b> to certify
         when to keep training parametrically and when to perform a function-preserving expansion,
