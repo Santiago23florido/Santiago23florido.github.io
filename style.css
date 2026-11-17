@@ -193,7 +193,7 @@ details.more li b { color: var(--text); font-weight: 600; }
 .entry p { margin: 0; font-size: 15px; color: var(--text-soft); }
 
 /* ---------------- skills ---------------- */
-.skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: 10px 28px; }
+.skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: 26px 28px; }
 .skillgroup h3 {
   font-size: 14px; margin: 0 0 9px; font-weight: 640;
 }
