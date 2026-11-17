@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="en" data-theme="">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Santiago Florido Gómez</title>
+<meta name="description" content="Santiago Florido Gómez — MSc student in Cyber-Physical Systems at Institut Polytechnique de Paris. Research in robot learning, cross-embodiment transfer and neuromotor interfaces." />
+<meta name="author" content="Santiago Florido Gómez" />
+<link rel="canonical" href="https://santiago23florido.github.io/" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Santiago Florido Gómez" />
+<meta property="og:description" content="Robot learning, cross-embodiment transfer and neuromotor interfaces. MSc Cyber-Physical Systems, Institut Polytechnique de Paris." />
+<meta property="og:url" content="https://santiago23florido.github.io/" />
+<meta name="twitter:card" content="summary" />
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦾</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+<script>
+  // Tema antes del primer pintado, para que no parpadee.
+  try {
+    var t = localStorage.getItem("theme");
+    if (t) document.documentElement.setAttribute("data-theme", t);
+  } catch (e) {}
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <span class="brand">Santiago Florido Gómez</span>
+    <a class="navlink" href="#research">Research</a>
+    <a class="navlink" href="#publications">Publications</a>
+    <a class="navlink" href="#projects">Projects</a>
+    <a class="navlink" href="#experience">Experience</a>
+    <a class="navlink" href="#skills">Skills</a>
+    <a class="navlink" href="#contact">Contact</a>
+    <button id="theme" type="button" aria-label="Switch between light and dark theme" title="Light / dark">◐</button>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>Santiago Florido Gómez</h1>
+    <p class="role">
+      MSc student, Cyber-Physical Systems — Institut Polytechnique de Paris<br />
+      Engineering degree, AI track — ENSTA Paris
+    </p>
+    <p class="lede">
+      I work on getting learned behaviour to <strong>survive a change of body</strong>: moving a
+      skill from one humanoid to a very different one, and translating human motor intention
+      into commands a robotic hand can act on.
+    </p>
+    <div class="links">
+      <a href="https://github.com/Santiago23florido">
+        <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+      <a href="https://www.linkedin.com/in/santiago-florido-gómez-722193232/">
+        <svg viewBox="0 0 16 16"><path d="M3.6 1.6a2 2 0 1 1 0 4 2 2 0 0 1 0-4ZM1.9 14.4V6.8h3.4v7.6H1.9Zm5.5 0V6.8h3.3v1h.05c.46-.83 1.58-1.3 2.6-1.3 2.3 0 2.75 1.46 2.75 3.4v4.5h-3.4v-4c0-.95-.02-2.17-1.37-2.17-1.37 0-1.58 1.03-1.58 2.1v4.07H7.4Z"/></svg>
+        LinkedIn
+      </a>
+      <a href="mailto:santiago.florido@ensta-paris.fr">
+        <svg viewBox="0 0 16 16"><path d="M1.5 3h13A1.5 1.5 0 0 1 16 4.5v7A1.5 1.5 0 0 1 14.5 13h-13A1.5 1.5 0 0 1 0 11.5v-7A1.5 1.5 0 0 1 1.5 3Zm.2 1.5 6.3 4.1 6.3-4.1H1.7Z"/></svg>
+        Email
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== RESEARCH ===================== -->
+<section id="research">
+  <div class="wrap">
+    <h2>Research</h2>
+
+    <p style="margin-top:-6px;max-width:64ch">
+      My work sits between reinforcement learning in simulation and the decoding of biological
+      signals. Both halves ask the same question from opposite ends: what has to be true about
+      a skill, or about an intention, for it to still mean something once the body carrying it
+      out is not the one it came from.
+    </p>
+
+    <div class="interests" style="margin-top:22px">
+      <div class="interest">
+        <h3>Cross-embodiment transfer</h3>
+        <p>Moving a learned locomotion skill between humanoids of very different scale, in simulation.</p>
+      </div>
+      <div class="interest">
+        <h3>Neuromotor interfaces</h3>
+        <p>Decoding individual motor units from high-density surface EMG while the limb is moving.</p>
+      </div>
+      <div class="interest">
+        <h3>Dexterous manipulation</h3>
+        <p>Musculoskeletal and robotic hands, teleoperation, and the context a muscle signal cannot carry.</p>
+      </div>
+      <div class="interest">
+        <h3>Safe &amp; efficient learning</h3>
+        <p>Constrained MDPs, physics-structured models, and networks that grow only when they must.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PUBLICATIONS ===================== -->
+<section id="publications">
+  <div class="wrap">
+    <h2>Publications</h2>
+
+    <div class="pub">
+      <div class="year">2026</div>
+      <div>
+        <h3>CAGE-NAS: Certified Functional Descent for Efficient Model Growth</h3>
+        <p class="authors"><em>Santiago Florido Gómez</em>, Stéphane Rivaud</p>
+        <p class="venue"><b>AXIOM workshop at NeurIPS 2026</b> — accepted</p>
+        <p style="font-size:14.5px;color:var(--text-soft);margin:0 0 8px">
+          Uses functional-gradient approximations in the tangent space of the network to certify
+          when a model should grow rather than keep training parametrically.
+        </p>
+        <p class="meta"><a href="https://github.com/Santiago23florido/functional-gradient-growth">Code</a></p>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="year">2025</div>
+      <div>
+        <h3>Low-order dynamic modeling and control of a neonatal incubator</h3>
+        <p class="authors"><em>Santiago Florido Gómez</em>, José David Gómez Bedoya, Tatiana Manrique, Róbinson A. Torres</p>
+        <p class="venue"><b>2025 IEEE 7th Colombian Conference on Automatic Control (CCAC)</b></p>
+        <p style="font-size:14.5px;color:var(--text-soft);margin:0 0 8px">
+          A thermodynamic model of a commercial incubator reduced to a control-friendly low-order
+          form by system identification, with discrete-time PID and incremental RST controllers
+          that outperform the stock controller.
+        </p>
+        <p class="meta">
+          <a href="https://ieeexplore.ieee.org/document/11259151">IEEE Xplore</a>
+          <a href="https://github.com/Santiago23florido/Neonatal-Incubator-Dynamic-Model-and-Control">Code</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROJECTS ===================== -->
+<section id="projects">
+  <div class="wrap">
+    <h2>Selected projects</h2>
+
+    <article class="project">
+      <h3><a href="https://github.com/Santiago23florido/lHumanoid-Soccer-Isaac-Lab">Cross-Embodiment Humanoid Skill Transfer</a></h3>
+      <p class="sub">Isaac Lab · 2026–present</p>
+      <p>
+        A locomotion skill learned on a <b>Unitree G1</b> runs <b>zero-shot</b> on a <b>NAO</b> that
+        never trained on it — nine times lighter and 2.3 times shorter. The skill crosses as a
+        <i>contract</i> rather than as joint angles: the short future of a 27-number state describing
+        what the body does, made dimensionless with its own leg length, mass and gravity.
+      </p>
+      <p>
+        Each skill's generator is trained once by flow matching on the source robot's rollouts;
+        each body's estimator and tracker are trained once on procedurally generated plans and never
+        see a transferred skill. So <b>N skills on M bodies cost N + M trainings instead of N × M</b>.
+      </p>
+      <div class="result">
+        <p><b>192 of 192 episodes complete without a fall</b> per body and skill, at 1.00–1.14× the
+        teacher's speed. On the NAO the zero-shot tracker stays closer to the teacher's gait
+        (0.141–0.185 deviation) than a tracker trained on the skill itself (0.346–0.674) or
+        joint-angle imitation (0.195–0.307). A task held out of every generator and tracker
+        still runs: 288/288 on the NAO with cross-fitted plans.</p>
+        <p class="caveat">All results are in simulation — no physical robot has walked with this.
+        One source body and one target body, not arbitrary morphologies.</p>
+      </div>
+      <div class="tags">
+        <span>Isaac Lab</span><span>Isaac Sim</span><span>PyTorch</span>
+        <span>PPO (rsl_rl)</span><span>Flow Matching</span><span>Dimensional Analysis</span>
+      </div>
+    </article>
+
+    <article class="project">
+      <h3><a href="https://github.com/Santiago23florido/Musculoskeletal-Hand-Simulation">Musculoskeletal Hand Control from Motor Units</a></h3>
+      <p class="sub">MuJoCo / MyoSuite · 2026–present</p>
+      <p>
+        Decoding <b>individual motor units</b> from high-density surface EMG in order to drive a
+        simulated musculoskeletal hand (MyoSuite's MyoHand). The open problem: decomposition methods
+        lose track of motor units exactly when the limb moves quickly — which is precisely when an
+        interface has to remain usable.
+      </p>
+      <p>
+        Building on the published adaptive method of Mendez Guerra, Barsakcioglu and Farina (2024),
+        I added a <b>closed-loop context head</b> that decides which detected peaks are true
+        discharges and feeds those decisions back into the adaptation.
+      </p>
+      <div class="result">
+        <p>On a <b>held-out subject, evaluated once with every component frozen</b>: it recovers
+        <b>87.4%</b> of discharges where the original method recovers <b>76.9%</b>
+        (+10.5, 95% cluster-bootstrap [7.6, 14.0]), and <b>78.6% against 60.5%</b> during the
+        fastest ramps. Units tracked at ≥90% agreement rise from 48.6% to 68.1%, with precision
+        and recall improving together.</p>
+        <p class="caveat">Ongoing research. The recordings are simulated HD-sEMG, which is why the
+        true discharges are known and every decoded spike can be scored. The hand is not yet driven
+        by the decoded motor units — that is the next stage of the project.</p>
+      </div>
+      <div class="tags">
+        <span>MuJoCo</span><span>MyoSuite</span><span>PyTorch</span>
+        <span>HD-sEMG</span><span>Attention</span><span>Signal Processing</span>
+      </div>
+    </article>
+
+    <article class="project">
+      <h3><a href="https://github.com/Santiago23florido/safe-autonomous-catheter-navigation">Safe Autonomous Catheter Navigation</a></h3>
+      <p class="sub">Isaac Lab · 2026–present</p>
+      <p>
+        A physics-based endovascular navigation research environment: an <b>81-body, 80-DOF flexible
+        catheter</b> advanced through vascular geometry with contact-force sensing. Wall-contact force
+        is treated as a <b>constraint rather than another weighted term in the reward</b>, so the budget
+        is stated in units a clinician can argue with instead of being hidden inside a tuned penalty
+        weight. The cost is emitted on a channel structurally separate from the reward.
+      </p>
+      <div class="result">
+        <p class="caveat">Phase 1 — environment construction. There is no reinforcement learning yet:
+        <code>_get_rewards()</code> returns zeros by construction, and a test enforces that separation.</p>
+      </div>
+      <div class="tags">
+        <span>Isaac Lab</span><span>Isaac Sim</span><span>Python</span>
+        <span>PyTorch</span><span>Safe RL / CMDPs</span>
+      </div>
+    </article>
+
+    <article class="project">
+      <h3><a href="https://github.com/Santiago23florido/functional-gradient-growth">CAGE-NAS — Certified Functional Descent</a></h3>
+      <p class="sub">Inria Saclay, équipe TAU · 2026</p>
+      <p>
+        Uses functional-gradient approximations in the <b>tangent space of the network</b> to certify
+        when to keep training parametrically and when to perform a function-preserving expansion,
+        so capacity grows only once the current representation can no longer certify a functional
+        descent step.
+      </p>
+      <div class="result">
+        <p>Grown architectures land <b>above the 99.8th percentile of 76,646 exhaustively enumerated
+        alternatives</b>, with 0.9575 ± 0.0038 test accuracy over four seeds on the principal
+        synthetic benchmark.</p>
+      </div>
+      <div class="tags">
+        <span>PyTorch</span><span>Neural Architecture Growth</span>
+        <span>Functional Gradients</span><span>Optimization</span>
+      </div>
+    </article>
+
+    <details class="more">
+      <summary>More projects</summary>
+      <ul>
+        <li><b><a href="https://github.com/Santiago23florido/Deep-Drive-APEX">Deep-Drive-APEX</a></b> —
+          Autonomous navigation on a real robotic vehicle with ROS 2: LiDAR obstacle detection,
+          path planning and trajectory execution, with a Gazebo real-to-sim framework for validation.</li>
+        <li><b><a href="https://github.com/Santiago23florido/gromo">gromo</a></b> —
+          Contributions to the growing-networks module for PyTorch (Inria, équipe TAU).</li>
+        <li><b><a href="https://github.com/Santiago23florido/Neonatal-incubator-with-response-to-apnea-episodes">Neonatal incubator with apnea response</a></b> —
+          End-to-end central-apnea detection from EMG-derived respiratory signals using CNN–LSTM
+          temporal models, with closed-loop corrective stimulation.</li>
+        <li><b><a href="https://github.com/Santiago23florido/Neonatal-Incubator-Dynamic-Model-and-Control">Neonatal incubator: model &amp; control</a></b> —
+          Thermodynamic modelling, system identification and digital PID / incremental RST control.
+          Published at IEEE CCAC 2025.</li>
+        <li><b><a href="https://github.com/Santiago23florido/Incremental-RST-control-for-DC-motor-with-encoder-design">Incremental RST control of a DC motor</a></b> —
+          System identification and digital control on real hardware, with encoder design.</li>
+        <li><b><a href="https://github.com/Santiago23florido/Robust-Image-Matching-with-Local-Features">Robust image matching</a></b> and
+          <b><a href="https://github.com/Santiago23florido/Vision_LocalFeatures_BayesianClassification_KMeans">local features, Bayesian classification &amp; K-means</a></b> —
+          Classical computer-vision pipelines.</li>
+        <li><b><a href="https://github.com/Santiago23florido/Scara-web-controlled-robotic-arm">SCARA web-controlled robotic arm</a></b> —
+          Kinematics, embedded control and a web interface for a physical SCARA arm.</li>
+      </ul>
+    </details>
+  </div>
+</section>
+
+<!-- ===================== EXPERIENCE ===================== -->
+<section id="experience">
+  <div class="wrap">
+    <h2>Experience &amp; education</h2>
+
+    <div class="entry">
+      <div class="top">
+        <span class="what">Research Intern (PRe) — Neural architecture growth</span>
+        <span class="when">May – Aug 2026</span>
+      </div>
+      <div class="where">équipe TAU / LISN, Inria Saclay — Université Paris-Saclay</div>
+      <p>
+        Certified functional descent for frugal learning: using functional-gradient information in
+        the tangent space of a network to decide when it should grow rather than keep training.
+        Led to a first-author paper accepted at the AXIOM workshop, NeurIPS 2026.
+      </p>
+    </div>
+
+    <div class="entry">
+      <div class="top">
+        <span class="what">Data &amp; Machine Learning Analyst</span>
+        <span class="when">Dec 2024 – Sep 2025</span>
+      </div>
+      <div class="where">Celerix — Medellín, Colombia</div>
+      <p>
+        Demand-forecasting and pricing models, automated ETL pipelines, embedding-based NLP
+        components, and Power BI / Tableau dashboards for operational decision-making.
+      </p>
+    </div>
+
+    <div class="entry">
+      <div class="top">
+        <span class="what">M2 — Cyber-Physical Systems</span>
+        <span class="when">2026 – 2027</span>
+      </div>
+      <div class="where">Institut Polytechnique de Paris</div>
+    </div>
+
+    <div class="entry">
+      <div class="top">
+        <span class="what">Diplôme d'Ingénieur — Computer Science, AI specialization</span>
+        <span class="when">2025 – present</span>
+      </div>
+      <div class="where">ENSTA Paris — Institut Polytechnique de Paris</div>
+    </div>
+
+    <div class="entry">
+      <div class="top">
+        <span class="what">B.Sc. Mechatronics Engineering</span>
+        <span class="when">2021 – 2026</span>
+      </div>
+      <div class="where">Universidad EIA — Envigado, Colombia</div>
+      <p>
+        Graduated with the highest cumulative average of the undergraduate class (4.64 / 5.00).
+        Honorary Mention for outstanding academic performance; University Honor Roll.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SKILLS ===================== -->
+<section id="skills">
+  <div class="wrap">
+    <h2>Technical skills</h2>
+    <div class="skills">
+      <div class="skillgroup">
+        <h3>Robot learning &amp; simulation</h3>
+        <ul>
+          <li>Isaac Lab, Isaac Sim, PhysX</li>
+          <li>MuJoCo, MyoSuite</li>
+          <li>PPO (rsl_rl), constrained MDPs</li>
+          <li>Flow matching, imitation</li>
+          <li>ROS 2, Gazebo, Nav2</li>
+        </ul>
+      </div>
+      <div class="skillgroup">
+        <h3>Machine learning</h3>
+        <ul>
+          <li>PyTorch, TensorFlow, scikit-learn</li>
+          <li>CNNs, LSTMs, attention</li>
+          <li>Statistical learning</li>
+          <li>Neural architecture growth</li>
+          <li>NLP &amp; semantic embeddings</li>
+        </ul>
+      </div>
+      <div class="skillgroup">
+        <h3>Signals &amp; control</h3>
+        <ul>
+          <li>HD-sEMG decomposition</li>
+          <li>EMG / ECG signal processing</li>
+          <li>System identification</li>
+          <li>PID / RST digital control</li>
+          <li>MATLAB, Simulink</li>
+        </ul>
+      </div>
+      <div class="skillgroup">
+        <h3>Software &amp; systems</h3>
+        <ul>
+          <li>Python, C++, C, SQL, Git</li>
+          <li>Docker, MPI, parallel computing</li>
+          <li>NumPy, SciPy, Pandas</li>
+          <li>Embedded: Arduino, ESP32</li>
+          <li>Graph, string &amp; geometric algorithms</li>
+        </ul>
+      </div>
+    </div>
+    <p style="margin-top:22px;color:var(--text-soft);font-size:14.5px">
+      <b>Languages:</b> Spanish (native) · English (C1) · French (B2)
+    </p>
+  </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section id="contact">
+  <div class="wrap contact">
+    <h2>Contact</h2>
+    <p>
+      I am looking for a <b>PhD in robot learning, neuromotor interfaces or dexterous
+      manipulation</b>, and I am always glad to talk about any of the work above — including
+      reproducing or extending it.
+    </p>
+    <div class="links" style="margin-top:18px">
+      <a href="mailto:santiago.florido@ensta-paris.fr">santiago.florido@ensta-paris.fr</a>
+      <a href="https://github.com/Santiago23florido">github.com/Santiago23florido</a>
+      <a href="https://www.linkedin.com/in/santiago-florido-gómez-722193232/">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <footer>
+    <span>Santiago Florido Gómez — Palaiseau, France</span>
+    <span>Built with plain HTML and CSS. <a href="https://github.com/Santiago23florido/Santiago23florido.github.io">Source</a></span>
+  </footer>
+</div>
+
+<script>
+  (function () {
+    var btn = document.getElementById("theme");
+    if (!btn) return;
+    function current() {
+      var set = document.documentElement.getAttribute("data-theme");
+      if (set === "dark" || set === "light") return set;
+      return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+    btn.addEventListener("click", function () {
+      var next = current() === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", next);
+      try { localStorage.setItem("theme", next); } catch (e) {}
+    });
+  })();
+</script>
+
+</body>
+</html>
